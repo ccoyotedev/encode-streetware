@@ -4,11 +4,15 @@ Team project for Encode's 2022 Solidity Bootcamp
 
 ## Getting Started
 
-First, run the development server:
+First, install by running:
 
 ```bash
-npm run dev
-# or
+yarn
+```
+
+Then to run the repo in localhost:
+
+```bash
 yarn dev
 ```
 
