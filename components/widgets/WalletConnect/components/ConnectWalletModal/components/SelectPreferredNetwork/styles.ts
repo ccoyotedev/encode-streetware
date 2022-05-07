@@ -4,15 +4,18 @@ const styles = css`
   .select-preferred-network {
     position: relative;
     z-index: 5;
-    margin-bottom: 35px;
+    margin-bottom: 24px;
     margin-top: -20px;
-    text-align: center;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
   }
 
   .select-preferred-network .title {
     font-size: 18px;
     margin-bottom: 12px;
     color: #200543;
+    margin-right: 12px;
   }
 
   .dropdown {

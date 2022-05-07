@@ -1,5 +1,5 @@
 const messages = {
-  title: "Select preferred network",
+  title: "Select preferred network: ",
 
   mainnet: "{network}",
   testNetwork: "{network} Test Network",

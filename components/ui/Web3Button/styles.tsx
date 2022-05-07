@@ -50,7 +50,7 @@ export default css`
 
   .dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     left: -1px;
     right: -1px;
   }

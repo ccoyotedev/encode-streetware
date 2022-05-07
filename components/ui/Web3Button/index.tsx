@@ -2,6 +2,7 @@ import { Loader } from "components/ui";
 import { smartTrim } from "utils/ethers.helper";
 import { useState } from "react";
 import styles from "./styles";
+import { Button } from "@chakra-ui/react";
 
 interface Props {
   user?: string;
@@ -31,9 +32,11 @@ export const Web3Button = ({
 
   return (
     <>
-      <button
+      <Button
         className={`web3-button ${connected ? "connected" : ""}`}
         onClick={handleClick}
+        width={32}
+        padding="6"
         disabled={loading}
       >
         {loading ? (
@@ -51,14 +54,14 @@ export const Web3Button = ({
             </div>
             {dropdownOpen && (
               <div className="dropdown">
-                <div className="dropdown-item" onClick={handleLogout}>
-                  <p>Logout</p>
-                </div>
+                <Button onClick={handleLogout} width={32}>
+                  Logout
+                </Button>
               </div>
             )}
           </>
         )}
-      </button>
+      </Button>
       <style jsx>{styles}</style>
     </>
   );

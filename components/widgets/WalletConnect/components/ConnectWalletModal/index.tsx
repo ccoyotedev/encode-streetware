@@ -7,11 +7,7 @@ import {
 } from "../../data-provider";
 
 import { WarningArea } from "../WarningArea";
-import {
-  UnlockWalletWrapper,
-  WalletCard,
-  SelectPreferredNetwork,
-} from "./components";
+import { WalletCard, SelectPreferredNetwork } from "./components";
 import {
   AUTHEREUM_API_KEY,
   getFortmaticKeyByChainId,
@@ -24,6 +20,7 @@ import messages from "./messages";
 import * as icons from "../../assets/providers";
 import { ChainId } from "../../data-provider/chains";
 import styles from "./styles";
+import { Modal } from "../Modal";
 
 export interface Wallet {
   title: string;
@@ -136,10 +133,7 @@ export const ConnectWalletModal = ({
   ];
 
   return (
-    <UnlockWalletWrapper
-      isVisible={isVisible}
-      onBackdropPress={onBackdropPress}
-    >
+    <Modal title="Connect Wallet" open={isVisible} onClose={onBackdropPress}>
       <SelectPreferredNetwork
         preferredNetwork={preferredChainId}
         onSelectPreferredNetwork={onSelectPreferredChainId}
@@ -181,6 +175,6 @@ export const ConnectWalletModal = ({
       </div>
 
       <style jsx>{styles}</style>
-    </UnlockWalletWrapper>
+    </Modal>
   );
 };

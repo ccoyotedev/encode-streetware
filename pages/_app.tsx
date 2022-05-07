@@ -1,12 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Web3ConnectProvider from "components/widgets/WalletConnect";
+import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "styles/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Web3ConnectProvider>
-      <Component {...pageProps} />
-    </Web3ConnectProvider>
+    <ChakraProvider theme={theme}>
+      <Web3ConnectProvider>
+        <Component {...pageProps} />
+      </Web3ConnectProvider>
+    </ChakraProvider>
   );
 }
 
