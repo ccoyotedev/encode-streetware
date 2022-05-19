@@ -10,7 +10,6 @@ import {
   Input,
   Divider
 } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -28,20 +27,19 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     </Head>
     <header>
         <Flex as="header" position="fixed" backgroundColor="white" w="100%">
-        <Input placeholder='Basic usage' />
-        <Button colorScheme='teal' variant='ghost'>
-           Discover
-        </Button>
-        <Button colorScheme='teal' variant='ghost'>
-            Sell
-        </Button>
+            <Input placeholder='Basic usage' />
+            <Button colorScheme='teal' variant='ghost'>
+            Discover
+            </Button>
+            <Button colorScheme='teal' variant='ghost'>
+                Sell
+            </Button>
         </Flex>
     </header> 
     <Divider />
     <Container  minWidth="100%" marginTop="5%">
-    {children}
+        {children}
     </Container>
-
 </>
 )
 

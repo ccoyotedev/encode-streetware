@@ -9,7 +9,6 @@ import {
   Container,
   Input
 } from '@chakra-ui/react'
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -19,9 +18,9 @@ type Props = {
 }
 
 const NestedLayout = ({ children }: Props) => (
-
-    <>{children}</>
-
+    <>
+        {children}
+    </>
 )
 
 export default NestedLayout
