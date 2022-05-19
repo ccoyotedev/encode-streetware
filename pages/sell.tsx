@@ -9,7 +9,7 @@ import {
 import Layout from '../components/layout'
 import NestedLayout from '../components/nested-layout'
 
-const Dashboard = () => (
+const Sell = () => (
     <SimpleGrid columns={[2, null, 3]} spacing='10px'>
     <Box bg='tomato' height='80px'></Box>
     <Box bg='tomato' height='80px'></Box>
@@ -19,7 +19,7 @@ const Dashboard = () => (
     </SimpleGrid>
 )
 
-Dashboard.getLayout = function getLayout(page: ReactElement) {
+Sell.getLayout = function getLayout(page: ReactElement) {
     return (
       <Layout>
         <NestedLayout>{page}</NestedLayout>
@@ -27,4 +27,4 @@ Dashboard.getLayout = function getLayout(page: ReactElement) {
     )
 }
     
-export default Dashboard
+export default Sell

@@ -1,16 +1,11 @@
 import React, { ReactNode } from 'react'
-import { useState } from 'react'
 import {
-  useColorMode,
-  Switch,
   Flex,
   Button,
-  IconButton,
   Container,
   Input,
   Divider
 } from '@chakra-ui/react'
-import Link from 'next/link'
 import Head from 'next/head'
 
 type Props = {
