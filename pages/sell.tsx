@@ -3,8 +3,6 @@ import Link from 'next/link'
 import {
    Box,
    SimpleGrid,
-   Input,
-   Container,
   } from '@chakra-ui/react'
 import Layout from '../components/layout'
 import NestedLayout from '../components/nested-layout'
@@ -21,7 +19,7 @@ const Sell = () => (
 
 Sell.getLayout = function getLayout(page: ReactElement) {
     return (
-      <Layout>
+      <Layout title="sell">
         <NestedLayout>{page}</NestedLayout>
       </Layout>
     )
