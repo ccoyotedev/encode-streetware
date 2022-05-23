@@ -9,6 +9,7 @@ import {
   HStack,
   Link,
 } from "@chakra-ui/react";
+import { ConnectButton } from "./widgets/ConnectButton";
 import Head from "next/head";
 
 type Props = {
@@ -60,6 +61,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
           <Button colorScheme="teal" variant="ghost">
             <Link href="/sell">Sell</Link>
           </Button>
+             <ConnectButton />
         </HStack>
       </Flex>
     </header>

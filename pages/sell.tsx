@@ -1,21 +1,23 @@
 import type { ReactElement } from 'react'
 import Link from 'next/link'
+import { GetStaticProps } from 'next'
 import {
-   Box,
-   SimpleGrid,
   } from '@chakra-ui/react'
 import Layout from '../components/layout'
 import NestedLayout from '../components/nested-layout'
+// import { useWeb3 } from '../contexts/useWeb3'
 
-const Sell = () => (
-    <SimpleGrid columns={[2, null, 3]} spacing='10px'>
-    <Box bg='tomato' height='80px'></Box>
-    <Box bg='tomato' height='80px'></Box>
-    <Box bg='tomato' height='80px'></Box>
-    <Box bg='tomato' height='80px'></Box>
-    <Box bg='tomato' height='80px'></Box>
-    </SimpleGrid>
-)
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  // const { state } = useWeb3()
+}
+
+const Sell = ( props: any) => {
+  return (
+    <></>
+  )
+}
+   
 
 Sell.getLayout = function getLayout(page: ReactElement) {
     return (
