@@ -27,8 +27,9 @@ const AssetCard = ({ src, title, cost }: Props) => (
         <Text fontWeight="bold" fontSize="sm" color="black">
           {title}
         </Text>
-        <Text fontWeight="bold" fontSize="sm" color="gray.500">
+        <Text fontWeight="bold" fontSize="sm" color="gray.500" >
           {cost}
+          <Image display="inline" src="/eth.svg"  pl="3px"/>
         </Text>
       </Stack>
     </Box>
