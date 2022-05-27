@@ -1,5 +1,14 @@
 import React from "react";
-import { Box, Image, useColorModeValue, Text, Stack } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  useColorModeValue,
+  Text,
+  Stack,
+  Button,
+  HStack,
+  Link,
+} from "@chakra-ui/react";
 
 type Props = {
   src?: string;
@@ -27,10 +36,15 @@ const AssetCard = ({ src, title, cost }: Props) => (
         <Text fontWeight="bold" fontSize="sm" color="black">
           {title}
         </Text>
-        <Text fontWeight="bold" fontSize="sm" color="gray.500" >
-          {cost}
-          <Image display="inline" src="/eth.svg"  pl="3px"/>
-        </Text>
+        <HStack>
+          <Text fontWeight="bold" fontSize="sm" color="gray.500">
+            {cost}
+            <Image display="inline" src="/eth.svg" pl="3px" />
+          </Text>
+          <Button size="xs" colorScheme="teal" variant="outline">
+            <Link href="/asset-view">Details</Link>
+          </Button>
+        </HStack>
       </Stack>
     </Box>
   </>
