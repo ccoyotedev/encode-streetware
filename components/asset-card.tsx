@@ -23,7 +23,7 @@ const AssetCard = ({ src, title, cost }: Props) => (
       rounded={"lg"}
       bg={useColorModeValue("white", "gray.700")}
       boxShadow={"lg"}
-      p={0}
+      pb="2%"
       minHeight="450px"
     >
       <Image objectFit="fill" w="100%" src={src} alt={title} />

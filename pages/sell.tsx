@@ -35,19 +35,21 @@ const Sell = () => {
               My Listings
             </Button>
           </ButtonGroup>
-          <SimpleGrid columns={3} spacing="5px" mt="2%">
-            {dataListShort.map((data: IList) => {
-              const { id, src, title, cost } = data;
-              return <AssetCard key={id} src={src} title={title} cost={cost} />;
-            })}
-          </SimpleGrid>
         </VStack>
-        <Box w="30%" borderWidth="1px" borderRadius="lg" p={6}>
+        <Box borderWidth="1px" borderRadius="lg" p={6}>
           <Text color="gray.500" noOfLines={1}>
             How to List Your NFT and Sell a Product:
           </Text>
         </Box>
       </HStack>
+      <VStack w="70%">
+        <SimpleGrid columns={3} spacing="5px" mt="2%">
+          {dataListShort.map((data: IList) => {
+            const { id, src, title, cost } = data;
+            return <AssetCard key={id} src={src} title={title} cost={cost} />;
+          })}
+        </SimpleGrid>
+      </VStack>
     </>
   );
 };
