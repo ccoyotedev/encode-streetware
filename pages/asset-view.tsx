@@ -1,11 +1,14 @@
-import type { ReactElement } from "react";
+import { ReactElement, useEffect } from "react";
+import { useRouter } from "next/router";
 import Layout from "../components/layout";
 import NestedLayout from "../components/nested-layout";
-import { useWeb3React } from "@web3-react/core";
-import { providers } from "ethers";
 
 const AssetView = () => {
-  const { library } = useWeb3React<providers.Web3Provider>();
+  const router = useRouter();
+
+  useEffect(() => {
+    const { src, title, cost } = router.query;
+  }, [router.query]);
 
   return <></>;
 };

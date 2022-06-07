@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import {
   Heading,
   Text,
@@ -14,10 +14,9 @@ import Layout from "../components/layout";
 import NestedLayout from "../components/nested-layout";
 import AssetCard from "components/asset-card";
 import { useWeb3React } from "@web3-react/core";
-import { providers } from "ethers";
 
 const Sell = () => {
-  const { library } = useWeb3React<providers.Web3Provider>();
+  const { account, library } = useWeb3React();
 
   return (
     <>
