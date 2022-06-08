@@ -48,7 +48,7 @@ const AssetCard = ({ src, title, cost }: Props) => {
             {title}
           </Text>
           <HStack>
-            <Text fontWeight="bold" fontSize="sm" color="gray.500">
+            <Text fontWeight="bold" fontSize="sm" color="gray.600">
               {cost}
               <Image display="inline" src="/eth.svg" pl="3px" />
             </Text>
