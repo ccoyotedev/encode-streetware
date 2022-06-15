@@ -114,6 +114,12 @@
   margin-left: 0.5rem;
 }
 
+.walletAdapterButton {
+  background-color: #512da8;
+  font-size: 12px;
+  width: 100%;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
