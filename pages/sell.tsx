@@ -9,14 +9,41 @@ import {
   VStack,
   Box,
 } from "@chakra-ui/react";
-import { dataListShort, IList } from "utils/data-list";
 import Layout from "../components/layout";
 import NestedLayout from "../components/nested-layout";
 import AssetCard from "components/asset-card";
 import { useWeb3React } from "@web3-react/core";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
+import * as web3 from "@solana/web3.js";
+import { Metadata } from "@metaplex-foundation/mpl-token-metadata";
 
 const Sell = () => {
   const { account, library } = useWeb3React();
+  const { connection } = useConnection();
+  const { publicKey, sendTransaction } = useWallet();
+  const [solanaNftList, setSolanaNftList] = useState([{}]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const nftsmetadata = await Metadata.findDataByOwner(
+        connection,
+        publicKey || ""
+      );
+      const listofUris = nftsmetadata
+        .map((data) => data.data.uri && data.data.uri + "?ext=json")
+        .filter((uri) => uri != "");
+
+      const nftDataList = await Promise.all(
+        listofUris.map(async (uri: string) => {
+          const resp = await fetch(uri);
+          return resp.json();
+        })
+      );
+      setSolanaNftList(nftDataList);
+    };
+
+    fetchData().catch(console.error);
+  }, [connection, publicKey]);
 
   return (
     <>
@@ -43,9 +70,11 @@ const Sell = () => {
       </HStack>
       <VStack w="70%">
         <SimpleGrid columns={3} spacing="5px" mt="2%">
-          {dataListShort.map((data: IList) => {
-            const { id, src, title, cost } = data;
-            return <AssetCard key={id} src={src} title={title} cost={cost} />;
+          {solanaNftList?.map((data: any) => {
+            const { image } = data;
+            return (
+              <AssetCard src={image} key={Math.random()} title="" cost="" />
+            );
           })}
         </SimpleGrid>
       </VStack>

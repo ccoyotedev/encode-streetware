@@ -25,7 +25,6 @@ type Props = {
 const Layout = ({ children, title = "This is the default title" }: Props) => {
   const [isChecked, setIsChecked] = useState(false);
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("??????", event.target);
     setIsChecked(!isChecked);
   };
   return (
